@@ -30,7 +30,7 @@ const showImages = (images) => {
 
 
 const getImages = (query) => {
-  toggleSpinner();
+ 
   fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
     .then(response => response.json())
     .then(data => showImages(data.hits))
@@ -45,12 +45,7 @@ const selectItem = (event, img) => {
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
-  } else {
-    // alert('Hey Already added !')
-    sliders.splice(item, 1);
-    // element.classList.toggle("added");
-    // element.classList.toggle('img-effect')
-  }
+  } 
 }
 var timer
 const createSlider = () => {
@@ -141,8 +136,4 @@ document.getElementById("search")
   });
 
 
-  const toggleSpinner = () => {
-    const spinner = document.getElementById('loading-spinner');
-    // console.log(spinner.classList)
-   spinner.classList.remove('d-none')
-  }
+  
